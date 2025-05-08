@@ -19,8 +19,9 @@ const calendar = new Calendar(bot, {
 });
 
 async function openCalendarHandler(msg) {
-    await msg.deleteMessage();
-    await calendar.startNavCalendar(msg)
+    // await calendar.startNavCalendar(msg)
+    await calendar.editMessageReplyMarkupCalendar(new Date(), msg.callbackQuery)
+    await msg.answerCbQuery();
 }
 
 async function callbackQueryHandler(msg) {

@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  telegraf-bot:
+    build: .
+    container_name: krok_schedule_bot
+    restart: unless-stopped
+    environment:
+      - BOT_TOKEN=твой_токен_сюда
